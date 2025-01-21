@@ -13,6 +13,41 @@ tile_set = ExtResource("1_mlda8")
 
 [node name="Props" type="TileMapLayer" parent="."]
 position = Vector2(-1, 0)
-tile_map_data = PackedByteArray("AAACAPn/AgAAAAAAAgACAPr/AgAAAAAAAgACAPv/AgAAAAAAAgACAPz/AgAAAAAAAgACAP3/AgAAAAAAAgADAPv/AgAAAAAAAgAEAPv/AgAAAAAAAgAEAPr/AgAAAAAAAgAEAPn/AgAAAAAAAgAEAPz/AgAAAAAAAgAEAP3/AgAAAAAAAgAGAPv/AgAAAAAAAgAGAPz/AgAAAAAAAgAGAP3/AgAAAAAAAgAGAPn/AgAAAAAAAgAIAPn/AgAAAAAAAgAIAPr/AgAAAAAAAgAIAPv/AgAAAAAAAgAIAP3/AgAAAAAAAgAFAPn/AAAAAAAAAQAFAP3/AAAAAAAAAQAJAPj/AAAAAAAAAgABAPv/AgAAAAAABAAHAPn/AAAAAAAABAAHAPr/AAAAAAAABAAHAPv/AAAAAAAABAAHAPz/AAAAAAAABAAHAP3/AAAAAAAABAADAPn/AAAAAAAABAADAPr/AAAAAAAABAACAPj/AAAAAAAABAABAPj/AAAAAAAABAA=")
+tile_map_data = PackedByteArray("AAACAPn/AgAAAAAAAgACAPr/AgAAAAAAAgACAPv/AgAAAAAAAgACAPz/AgAAAAAAAgACAP3/AgAAAAAAAgADAPv/AgAAAAAAAgAEAPv/AgAAAAAAAgAEAPr/AgAAAAAAAgAEAPn/AgAAAAAAAgAEAPz/AgAAAAAAAgAEAP3/AgAAAAAAAgAGAPv/AgAAAAAAAgAGAPz/AgAAAAAAAgAGAP3/AgAAAAAAAgAGAPn/AgAAAAAAAgAIAPn/AgAAAAAAAgAIAPr/AgAAAAAAAgAIAPv/AgAAAAAAAgAIAP3/AgAAAAAAAgAFAPn/AAAAAAAAAQAFAP3/AAAAAAAAAQAJAPj/AAAAAAAAAgABAPv/AgAAAAAABAAHAPn/AAAAAAAABAAHAPr/AAAAAAAABAAHAPv/AAAAAAAABAAHAPz/AAAAAAAABAAHAP3/AAAAAAAABAADAPn/AAAAAAAABAADAPr/AAAAAAAABAACAPj/AAAAAAAABAABAPj/AAAAAAAABAAIAPj/AgAAAAAABgA=")
 tile_set = ExtResource("1_mlda8")
 y_sort_origin = 1
+
+[connection signal="body_entered" from="Props/Spikes" to="Props/Spikes" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@36037" to="Props/@Area2D@36037" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@36038" to="Props/@Area2D@36038" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@36039" to="Props/@Area2D@36039" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@36040" to="Props/@Area2D@36040" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@36041" to="Props/@Area2D@36041" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@36042" to="Props/@Area2D@36042" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@36043" to="Props/@Area2D@36043" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@36044" to="Props/@Area2D@36044" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@36045" to="Props/@Area2D@36045" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@36046" to="Props/@Area2D@36046" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@36047" to="Props/@Area2D@36047" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@36048" to="Props/@Area2D@36048" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@36049" to="Props/@Area2D@36049" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@36050" to="Props/@Area2D@36050" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@36051" to="Props/@Area2D@36051" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@36052" to="Props/@Area2D@36052" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@36053" to="Props/@Area2D@36053" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@36054" to="Props/@Area2D@36054" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/KeyCollectible" to="Props/KeyCollectible" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@36055" to="Props/@Area2D@36055" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/HeartCollectible" to="Props/HeartCollectible" method="_on_body_entered"]
+[connection signal="interact" from="Props/NonPlayableCharacter" to="Props/NonPlayableCharacter" method="_on_interact"]
+[connection signal="body_entered" from="Props/QuestObject" to="Props/QuestObject" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@36056" to="Props/@Area2D@36056" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@36057" to="Props/@Area2D@36057" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@36058" to="Props/@Area2D@36058" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@36059" to="Props/@Area2D@36059" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@36060" to="Props/@Area2D@36060" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@36061" to="Props/@Area2D@36061" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@36062" to="Props/@Area2D@36062" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@36063" to="Props/@Area2D@36063" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/HiddenSpikes" to="Props/HiddenSpikes" method="_on_body_entered"]
+[connection signal="body_exited" from="Props/HiddenSpikes" to="Props/HiddenSpikes" method="_on_body_exited"]
