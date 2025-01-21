@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://tib5hxa4i6gy"]
+
+[ext_resource type="Script" path="res://Scripts/object_quest.gd" id="1_catij"]
+[ext_resource type="Resource" uid="uid://c64rpst3s2iw4" path="res://Resources/QuestObjects/coin.tres" id="2_4s684"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4puw1"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l3qx6"]
+load_path = "res://.godot/imported/props.png-ed04fc63ed36929630d14c4369b21a01.ctex"
+
+[node name="QuestObject" type="Area2D" node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_catij")
+object_properties = ExtResource("2_4s684")
+sprite = NodePath("Sprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4puw1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = SubResource("CompressedTexture2D_l3qx6")
+region_enabled = true
+region_rect = Rect2(0, 0, 31, 31)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

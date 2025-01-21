@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Object_Quest" load_steps=2 format=3 uid="uid://c64rpst3s2iw4"]
+
+[ext_resource type="Script" path="res://Scripts/object_quest_properties.gd" id="1_j5mxf"]
+
+[resource]
+script = ExtResource("1_j5mxf")
+index = 0
+sprite_region = Rect2(96, 0, 31, 31)

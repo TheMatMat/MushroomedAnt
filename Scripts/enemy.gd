@@ -2,6 +2,7 @@ class_name Enemy extends CharacterBase
 
 static var all_enemies : Array[Enemy]
 
+@export var index : int
 @export var attack_warm_up : float = 0.5
 @export var attack_distance : float = 0.5
 

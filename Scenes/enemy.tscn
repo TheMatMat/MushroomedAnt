@@ -8,7 +8,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p1d5c"]
 
-[node name="Enemy" type="RigidBody2D" node_paths=PackedStringArray("sprites", "attack_spawn_point")]
+[node name="Enemy" type="RigidBody2D" node_paths=PackedStringArray("sprites", "attack_spawn_point") groups=["Enemy"]]
 collision_mask = 3
 gravity_scale = 0.0
 lock_rotation = true

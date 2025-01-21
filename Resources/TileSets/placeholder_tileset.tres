@@ -1,16 +1,20 @@
-[gd_resource type="TileSet" load_steps=10 format=3 uid="uid://boei5dbdfnuex"]
+[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://boei5dbdfnuex"]
 
 [ext_resource type="PackedScene" uid="uid://nmpi1435amt" path="res://Scenes/key_collectible.tscn" id="1_k7xku"]
 [ext_resource type="Texture2D" uid="uid://dkkti4sg4v785" path="res://Sprites/tilemapFloor.png" id="1_ylhcx"]
 [ext_resource type="PackedScene" uid="uid://dov4nkfsf27hs" path="res://Scenes/heart_collectible.tscn" id="2_3xi7r"]
+[ext_resource type="PackedScene" uid="uid://tib5hxa4i6gy" path="res://Scenes/quest_object.tscn" id="3_5auxh"]
 [ext_resource type="PackedScene" uid="uid://b0ahenmxn2ain" path="res://Scenes/enemy.tscn" id="4_xwwxj"]
 [ext_resource type="PackedScene" uid="uid://cinljgej7owpj" path="res://Scenes/spikes.tscn" id="5_n5j7o"]
 [ext_resource type="PackedScene" uid="uid://caqkxr3u45dsp" path="res://Scenes/door_closed.tscn" id="6_oiqyd"]
+[ext_resource type="PackedScene" uid="uid://cuvekig5rob8d" path="res://Scenes/non_playable_character.tscn" id="7_bmhi2"]
+[ext_resource type="PackedScene" uid="uid://byy6simx8nm3a" path="res://Scenes/enemy2.tscn" id="9_86le6"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1s6bk"]
 resource_name = "Collectibles"
 scenes/1/scene = ExtResource("1_k7xku")
 scenes/2/scene = ExtResource("2_3xi7r")
+scenes/4/scene = ExtResource("3_5auxh")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qyah5"]
 resource_name = "Placeholder"
@@ -137,6 +141,8 @@ resource_name = "Obstacles"
 scenes/1/scene = ExtResource("4_xwwxj")
 scenes/2/scene = ExtResource("5_n5j7o")
 scenes/3/scene = ExtResource("6_oiqyd")
+scenes/4/scene = ExtResource("7_bmhi2")
+scenes/5/scene = ExtResource("9_86le6")
 
 [resource]
 resource_name = "Placeholder"

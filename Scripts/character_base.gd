@@ -55,10 +55,19 @@ func apply_hit(attack : Attack) -> void:
 	if Time.get_unix_time_from_system() - _last_hit_time < invincibility_duration:
 		return
 	_last_hit_time = Time.get_unix_time_from_system()
+	
+	var hud = get_tree().get_root().get_node("MainScene/hud")
+	var player = Player.Instance
 
 	life -= attack.damages if attack != null else 1
 	if life <= 0:
 		_set_state(STATE.DEAD)
+		if is_in_group("Enemy") and player.has_quest and player.current_quest_type == Player.QuestType.ENEMIES:
+			player.enemies_killed_count += 1
+			hud.quest_count.text = str(player.enemies_killed_count) + "/" + str(player.enemies_to_kill_count)
+		if self is Enemy and player.has_quest and player.current_quest_type == Player.QuestType.SPECIFIC_ENEMIES:
+			player.enemies_killed[(self as Enemy).index] += 1
+			hud.quest_count.text = str(player.enemies_killed[(self as Enemy).index]) + "/" + str(player.enemies_to_kill_count)
 	else:
 		if attack != null && attack.knockback_duration > 0.0:
 			apply_knockback(attack.knockback_duration, (attack.position - position).normalized() * attack.knockback_speed)

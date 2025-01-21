@@ -23,3 +23,5 @@ func _on_body_entered(_body:Node2D) -> void:
 	if _body is CharacterBase && _body != attack_owner:
 		_body.apply_hit(self)
 		queue_free()
+	elif _body.is_in_group("NPC") and attack_owner.can_interact_with_npc:
+		_body.interact.emit()

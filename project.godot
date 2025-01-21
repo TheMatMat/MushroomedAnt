@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 project/assembly_name="Procedural"
 
+[global_group]
+
+NPC=""
+Enemy=""
+
 [input]
 
 Left={

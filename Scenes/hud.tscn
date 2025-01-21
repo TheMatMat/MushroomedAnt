@@ -1,13 +1,147 @@
-[gd_scene load_steps=3 format=3 uid="uid://b20085rng87fk"]
+[gd_scene load_steps=14 format=3 uid="uid://b20085rng87fk"]
 
 [ext_resource type="Script" path="res://Scripts/hud.gd" id="1_ftoh2"]
 [ext_resource type="PackedScene" uid="uid://bxb3sh2rsgn4j" path="res://Scenes/heart.tscn" id="2_fymyw"]
 
+[sub_resource type="Gradient" id="Gradient_lgkh1"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_47ut2"]
+gradient = SubResource("Gradient_lgkh1")
+
+[sub_resource type="Gradient" id="Gradient_o8v40"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ykhds"]
+gradient = SubResource("Gradient_o8v40")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_eoo5p"]
+load_path = "res://.godot/imported/Heart.png-e910d028e12b6ab43422798cb5418f7e.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ylhki"]
+load_path = "res://.godot/imported/props.png-ed04fc63ed36929630d14c4369b21a01.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_80qs3"]
+font_size = 24
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_a5dj7"]
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_r6b8m"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vfouf"]
+gradient = SubResource("Gradient_r6b8m")
+width = 126
+height = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_sv2rp"]
+font_size = 32
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
 [node name="hud" type="CanvasLayer"]
 script = ExtResource("1_ftoh2")
 heart_scene = ExtResource("2_fymyw")
+enemy_sprite = Array[Texture2D]([SubResource("GradientTexture1D_47ut2"), SubResource("GradientTexture1D_ykhds")])
+enemies_sprite = SubResource("CompressedTexture2D_eoo5p")
+object_sprite = SubResource("CompressedTexture2D_ylhki")
 
 [node name="LifeContainer" type="HBoxContainer" parent="."]
 offset_right = 170.0
 offset_bottom = 50.0
 theme_override_constants/separation = 10
+
+[node name="DialoguePanel" type="Panel" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -560.0
+offset_top = -268.0
+offset_right = 560.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Border" type="Control" parent="DialoguePanel"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Border1" type="ColorRect" parent="DialoguePanel/Border"]
+layout_mode = 0
+offset_right = 1120.0
+offset_bottom = 4.0
+color = Color(0, 0, 0, 1)
+
+[node name="Border2" type="ColorRect" parent="DialoguePanel/Border"]
+layout_mode = 0
+offset_top = 244.0
+offset_right = 1120.0
+offset_bottom = 248.0
+color = Color(0, 0, 0, 1)
+
+[node name="Border3" type="ColorRect" parent="DialoguePanel/Border"]
+layout_mode = 0
+offset_left = 1115.0
+offset_right = 1120.0
+offset_bottom = 248.0
+color = Color(0, 0, 0, 1)
+
+[node name="Border4" type="ColorRect" parent="DialoguePanel/Border"]
+layout_mode = 0
+offset_right = 5.0
+offset_bottom = 248.0
+color = Color(0, 0, 0, 1)
+
+[node name="CharacterName" type="Label" parent="DialoguePanel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 1104.0
+offset_bottom = 64.0
+text = "Mushroom"
+label_settings = SubResource("LabelSettings_80qs3")
+vertical_alignment = 1
+
+[node name="Text" type="Label" parent="DialoguePanel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 80.0
+offset_right = 1104.0
+offset_bottom = 232.0
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus bibendum feugiat congue. Maecenas laoreet nulla libero, semper pulvinar velit auctor id. Curabitur dictum iaculis massa, nec imperdiet neque volutpat et. Sed tempor felis ac mauris sagittis ornare. Praesent molestie mauris sit amet lacus blandit, ac feugiat dui sagittis. Donec vulputate quam lectus, non tincidunt metus convallis eu. Nam vulputate nunc enim, sit amet efficitur tellus viverra id. Vivamus egestas sapien ut urna ultrices condimentum. Curabitur a libero suscipit, lacinia eros vitae, ultricies odio. Vestibulum auctor rutrum ex, vel feugiat augue imperdiet sit amet. Sed imperdiet nec nibh ornare pellentesque. Donec sit amet velit ac urna bibendum mattis vel hendrerit lectus."
+label_settings = SubResource("LabelSettings_a5dj7")
+autowrap_mode = 3
+
+[node name="QuestIcon" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.931
+anchor_top = 0.028
+anchor_right = 0.98
+anchor_bottom = 0.116
+offset_left = -0.512085
+offset_top = -0.144001
+offset_right = 0.0400391
+offset_bottom = -0.167999
+texture = SubResource("GradientTexture2D_vfouf")
+expand_mode = 1
+
+[node name="Text" type="Label" parent="QuestIcon"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.982
+anchor_top = 0.088
+anchor_right = -0.281
+anchor_bottom = 1.018
+offset_left = -0.026001
+offset_top = -0.0160003
+offset_right = 0.0170002
+offset_bottom = -0.026001
+text = "10/10"
+label_settings = SubResource("LabelSettings_sv2rp")
+horizontal_alignment = 2
+vertical_alignment = 1
