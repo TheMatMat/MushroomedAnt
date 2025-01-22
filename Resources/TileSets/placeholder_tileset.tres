@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=14 format=3 uid="uid://boei5dbdfnuex"]
+[gd_resource type="TileSet" load_steps=15 format=3 uid="uid://boei5dbdfnuex"]
 
 [ext_resource type="PackedScene" uid="uid://nmpi1435amt" path="res://Scenes/key_collectible.tscn" id="1_k7xku"]
 [ext_resource type="Texture2D" uid="uid://dkkti4sg4v785" path="res://Sprites/tilemapFloor.png" id="1_ylhcx"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cuvekig5rob8d" path="res://Scenes/non_playable_character.tscn" id="7_bmhi2"]
 [ext_resource type="PackedScene" uid="uid://byy6simx8nm3a" path="res://Scenes/enemy2.tscn" id="9_86le6"]
 [ext_resource type="PackedScene" uid="uid://dg4nnt3bdm7r4" path="res://Scenes/hidden_spikes.tscn" id="10_ed21d"]
+[ext_resource type="PackedScene" uid="uid://bv53wen5055md" path="res://Scenes/hole_tile.tscn" id="11_74bcn"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1s6bk"]
 resource_name = "Collectibles"
@@ -145,6 +146,7 @@ scenes/3/scene = ExtResource("6_oiqyd")
 scenes/4/scene = ExtResource("7_bmhi2")
 scenes/5/scene = ExtResource("9_86le6")
 scenes/6/scene = ExtResource("10_ed21d")
+scenes/7/scene = ExtResource("11_74bcn")
 
 [resource]
 resource_name = "Placeholder"
