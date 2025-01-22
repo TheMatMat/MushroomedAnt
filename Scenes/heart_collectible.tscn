@@ -1,9 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://dov4nkfsf27hs"]
 
 [ext_resource type="Script" path="res://Scripts/heart_collectible.gd" id="1_0gye8"]
-[ext_resource type="Texture2D" uid="uid://b05sq5d5ukqij" path="res://Sprites/Heart.png" id="2_r70of"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qxpyt"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qfeil"]
+load_path = "res://.godot/imported/HP Heal.png-38ee110ef9a494175269929fb1bd22fb.ctex"
 
 [node name="HeartCollectible" type="Area2D"]
 script = ExtResource("1_0gye8")
@@ -13,7 +15,7 @@ shape = SubResource("RectangleShape2D_qxpyt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(9.53674e-07, -9.53674e-07)
-scale = Vector2(1.25, 1.25)
-texture = ExtResource("2_r70of")
+scale = Vector2(0.625, 0.625)
+texture = SubResource("CompressedTexture2D_qfeil")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
