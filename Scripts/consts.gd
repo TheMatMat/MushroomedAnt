@@ -29,7 +29,62 @@ static func Repeat(t : float, length : float) -> float:
 	while t >= length:
 		t -= length
 	return t
+	
+# Function to transform door direction based on rotation
+static func transform_directions(original_directions: Array[Utils.ORIENTATION], rotation_angle: int) -> Array[Utils.ORIENTATION]:
+	# Map each direction to a numerical index
+	var direction_indices = { Utils.ORIENTATION.NORTH: 0, Utils.ORIENTATION.EAST: 1, Utils.ORIENTATION.SOUTH: 2, Utils.ORIENTATION.WEST: 3 }
+	
+	var transformed : Array[Utils.ORIENTATION]
+	for original_direction in original_directions:
+		# Get the index of the original direction
+		var original_index = direction_indices[original_direction]
+		
+		# Calculate the new index based on rotation (90° = +1, 180° = +2, etc.)
+		var steps = rotation_angle / 90
+		var new_index = (original_index + steps) % 4
+		
+		# Append the transformed direction
+		transformed.append((new_index + 1) as Utils.ORIENTATION) # Ad 1 because 0 would be ORIENTATION.NONE
+	
+	return transformed
+	
+static func get_opposite_direction(direction: ORIENTATION) -> ORIENTATION:
+	match direction:
+		ORIENTATION.NORTH:
+			return ORIENTATION.SOUTH
+		ORIENTATION.SOUTH:
+			return ORIENTATION.NORTH
+		ORIENTATION.EAST:
+			return ORIENTATION.WEST
+		ORIENTATION.WEST:
+			return ORIENTATION.EAST
+		_:
+			return ORIENTATION.NONE # Handle invalid input if needed
 
+static func direction_to_vector(direction: Utils.ORIENTATION) -> Vector2:
+	match direction:
+		Utils.ORIENTATION.NORTH:
+			return Vector2(0, -1)
+		Utils.ORIENTATION.SOUTH:
+			return Vector2(0, 1)
+		Utils.ORIENTATION.EAST:
+			return Vector2(1, 0)
+		Utils.ORIENTATION.WEST:
+			return Vector2(-1, 0)
+		_:
+			return Vector2.ZERO # Default case for invalid input
+
+static func get_direction(offset: Vector2) -> Utils.ORIENTATION:
+	if offset == Vector2(0, 1):
+		return Utils.ORIENTATION.NORTH
+	elif offset == Vector2(1, 0):
+		return Utils.ORIENTATION.EAST
+	elif offset == Vector2(0, -1):
+		return Utils.ORIENTATION.SOUTH
+	elif offset == Vector2(-1, 0):
+		return Utils.ORIENTATION.WEST
+	return Utils.ORIENTATION.NONE
 
 ## Transforms an angle into ORIENTATION
 static func AngleToOrientation(angle : float, origin : ORIENTATION = ORIENTATION.NORTH) -> ORIENTATION:

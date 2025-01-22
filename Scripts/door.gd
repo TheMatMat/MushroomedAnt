@@ -46,7 +46,6 @@ func _ready() -> void:
 	elif secretNode.visible:
 		set_state(STATE.SECRET)
 
-
 func _try_unlock() -> void:
 	if state != STATE.CLOSED || Player.Instance.key_count <= 0:
 		return
