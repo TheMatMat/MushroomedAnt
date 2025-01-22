@@ -4,6 +4,7 @@ extends StaticBody2D
 @export var sprite : Sprite2D
  
 signal interact
+signal quest_finished
 
 func _ready() -> void:
 	sprite.region_rect = properties.sprite_region
@@ -16,8 +17,10 @@ func _on_interact() -> void:
 	var quest_done = false
 	
 	if !Player.Instance.has_quest:
+		for line in properties.introduction_lines:
+			texts.push_back(line)
+		
 		texts.push_back("Voilà une quête.")
-		texts.push_back("Bonne chance !")
 		player.generate_quest()
 		hud.display_dialogue(texts, properties.name)
 		
@@ -31,10 +34,10 @@ func _on_interact() -> void:
 				quest_done = player.current_object_quest_count >= player.current_object_quest_needed
 		
 		if !quest_done:
-			texts.push_back("Termine ta mission !")
-			hud.display_dialogue(texts, properties.name)
+			hud.display_random_dialogue(properties.quest_non_finished_lines, properties.name)
 		else:
 			texts.push_back("Bien joué, voici une autre mission.")
+			quest_finished.emit()
 			player.reset_enemies_killed()
 			player.reset_objects_collected()
 			player.generate_quest()

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NPC" load_steps=2 format=3 uid="uid://b6r52oh6ga5r8"]
+
+[ext_resource type="Script" path="res://Scripts/npc_properties.gd" id="1_gdw0l"]
+
+[resource]
+script = ExtResource("1_gdw0l")
+name = "Mushroomed Ant"
+sprite_region = Rect2(64, 0, 32, 32)
+introduction_lines = Array[String](["Ouuuuh ça remue là dedans, le fait d’avoir autant de puissance me donne une idée. Et si je continue à croître pour m’étendre dans toute la fourmilière, j’ai hâte de manipuler autant de pantin, grâce à ça je pourrais envoyer des fourmis à l'extérieur et éliminer d'autres fourmilières."])
+quest_non_finished_lines = Array[String](["Es-tu déjà fatigué ? Pathétique. Retourne faire ce que je t’ai dit de faire !", "Il reste tant à faire… et toi, tu gaspilles ton temps ici ? Dépêche-toi.", "Si tu veux me servir correctement, achève rapidement cette mission.", "Si tu veux me servir correctement, achève rapidement cette mission."])

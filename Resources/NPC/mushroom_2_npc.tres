@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NPC" load_steps=2 format=3 uid="uid://dm20s4vs4dq1u"]
+
+[ext_resource type="Script" path="res://Scripts/npc_properties.gd" id="1_ivmpd"]
+
+[resource]
+script = ExtResource("1_ivmpd")
+name = "Mushroomed Ant"
+sprite_region = Rect2(64, 0, 32, 32)
+introduction_lines = Array[String](["AAAAh je me sens plus grand et plus puissant maintenant ! Oui avec cette force je continuerai de grandir jusqu' au maximum."])
+quest_non_finished_lines = Array[String](["Je te donne un ordre, alors va au lieu de me faire perdre mon temps !", "Tu reviens ici, mais sans ce que j’ai demandé ? Retourne travailler !", "Chaque seconde compte. Va et termine ta mission, esclave."])

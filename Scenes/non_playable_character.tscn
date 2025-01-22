@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cuvekig5rob8d"]
 
 [ext_resource type="Script" path="res://Scripts/non_playable_character.gd" id="1_fb04w"]
-[ext_resource type="Resource" uid="uid://ck5ka6loi3x3w" path="res://Resources/NPC/mushroom_npc.tres" id="2_vj1wr"]
+[ext_resource type="Resource" uid="uid://ck5ka6loi3x3w" path="res://Resources/NPC/mushroom_1_npc.tres" id="2_vj1wr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0sfud"]
 

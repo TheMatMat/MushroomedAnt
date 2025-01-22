@@ -15,6 +15,8 @@ var previous_life : int
 @onready var quest_icon : TextureRect = $"QuestIcon"
 @onready var quest_count : Label = $"QuestIcon/Text"
 
+var rng = RandomNumberGenerator.new()
+
 signal next_line
 
 func _ready() -> void:
@@ -62,6 +64,25 @@ func display_dialogue(lines : Array[String], npc_name : String) -> void:
 		
 		await get_tree().create_timer(0.25).timeout
 		await next_line
+	
+	Player.Instance.ui_opened = false
+	
+	await get_tree().create_timer(0.20).timeout
+	
+	dialogue_panel.visible = false
+	Player.Instance.can_interact_with_npc = true
+
+
+func display_random_dialogue(lines : Array[String], npc_name : String) -> void:
+	Player.Instance.ui_opened = true
+	Player.Instance.can_interact_with_npc = false
+	dialogue_panel.visible = true
+	dialogue_npc_name.text = npc_name
+	
+	dialogue_text.text = lines[rng.randi_range(0, lines.size()-1)]
+		
+	await get_tree().create_timer(0.25).timeout
+	await next_line
 	
 	Player.Instance.ui_opened = false
 	
