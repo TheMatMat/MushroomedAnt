@@ -14,5 +14,5 @@ tile_map_data = PackedByteArray("AAD8/wQAAQAAAAAAAAD9/wQAAQAAAAAAAAD+/wQAAQAAAAA
 tile_set = ExtResource("2_ojlg1")
 
 [node name="Props" type="TileMapLayer" parent="."]
-position = Vector2(-176, 136)
+position = Vector2(-16, 16)
 tile_set = ExtResource("2_ojlg1")

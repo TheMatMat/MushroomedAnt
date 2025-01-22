@@ -7,6 +7,7 @@
 [node name="GenerationScene" type="Node2D"]
 
 [node name="LevelGenerator" parent="." instance=ExtResource("1_npg4u")]
+max_distance_to_spawn = 3
 
 [node name="Player" parent="." instance=ExtResource("2_hfiqq")]
 life = 100000000000000000

@@ -6,6 +6,7 @@ class RoomData:
 	var distance_to_spawn : int
 	var number_of_doors : int
 	var doors_world_direction : Array[Utils.ORIENTATION]
+	var room_scene : Room = null
 
 var directions = [Utils.ORIENTATION.NONE, Utils.ORIENTATION.NORTH, Utils.ORIENTATION.EAST, Utils.ORIENTATION.SOUTH, Utils.ORIENTATION.WEST]
 
@@ -67,23 +68,21 @@ func _ready() -> void:
 		
 		match direction:
 			Utils.ORIENTATION.NORTH:
-				new_room_data.position_levelwise = Vector2(0, 1)
+				new_room_data.position_levelwise = Vector2(0, -1)
 			Utils.ORIENTATION.WEST:
 				new_room_data.position_levelwise = Vector2(-1, 0)
 			Utils.ORIENTATION.SOUTH:
-				new_room_data.position_levelwise = Vector2(0, -1)
+				new_room_data.position_levelwise = Vector2(0, 1)
 			Utils.ORIENTATION.EAST:
 				new_room_data.position_levelwise = Vector2(1, 0)
 				
 		place_rooms(new_room_data, direction, Utils.get_opposite_direction(direction))
 	
-	#print_placed_rooms()
+	print_placed_rooms()
 	
 	add_doors_to_common_walls()
 	ensure_all_rooms_connected()
 	place_rooms_at_positions()
-	
-	Player.Instance.transform.origin = Vector2(0, 0)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -132,11 +131,11 @@ func place_rooms(current_room_data : RoomData, initial_direction : Utils.ORIENTA
 
 		match direction:
 			Utils.ORIENTATION.NORTH:
-				next_room_data.position_levelwise = current_room_data.position_levelwise + Vector2(0, 1)
+				next_room_data.position_levelwise = current_room_data.position_levelwise - Vector2(0, 1)
 			Utils.ORIENTATION.EAST:
 				next_room_data.position_levelwise = current_room_data.position_levelwise + Vector2(1, 0)
 			Utils.ORIENTATION.SOUTH:
-				next_room_data.position_levelwise = current_room_data.position_levelwise - Vector2(0, 1)
+				next_room_data.position_levelwise = current_room_data.position_levelwise + Vector2(0, 1)
 			Utils.ORIENTATION.WEST:
 				next_room_data.position_levelwise = current_room_data.position_levelwise - Vector2(1, 0)
 			_:
@@ -154,9 +153,9 @@ func add_doors_to_common_walls():
 
 		# Define neighbor directions and positions
 		var neighbors = {
-			Utils.ORIENTATION.NORTH: position_levelwise + Vector2(0, 1),
+			Utils.ORIENTATION.NORTH: position_levelwise - Vector2(0, 1),
 			Utils.ORIENTATION.EAST: position_levelwise + Vector2(1, 0),
-			Utils.ORIENTATION.SOUTH: position_levelwise - Vector2(0, 1),
+			Utils.ORIENTATION.SOUTH: position_levelwise + Vector2(0, 1),
 			Utils.ORIENTATION.WEST: position_levelwise - Vector2(1, 0)
 		}
 
@@ -201,11 +200,11 @@ func dfs(start_position: Vector2, visited: Dictionary, placed_rooms: Dictionary)
 		var neighbor_position = start_position
 		match direction:
 			Utils.ORIENTATION.NORTH:
-				neighbor_position += Vector2(0, 1)
+				neighbor_position -= Vector2(0, 1)
 			Utils.ORIENTATION.EAST:
 				neighbor_position += Vector2(1, 0)
 			Utils.ORIENTATION.SOUTH:
-				neighbor_position -= Vector2(0, 1)
+				neighbor_position += Vector2(0, 1)
 			Utils.ORIENTATION.WEST:
 				neighbor_position -= Vector2(1, 0)
 		if placed_rooms.has(neighbor_position) and not visited.has(neighbor_position):
@@ -257,21 +256,21 @@ func place_rooms_at_positions():
 		match room_data.doors_world_direction.size():
 			1:
 				if all_rooms_sorted[Room.RoomType.ONE_DOOR] and all_rooms_sorted[Room.RoomType.ONE_DOOR].size() > 0:
-					selected_room = all_rooms_sorted[Room.RoomType.ONE_DOOR].pick_random()
+					selected_room = all_rooms_sorted[Room.RoomType.ONE_DOOR].pick_random().duplicate()
 			2:
 				var door_difference = abs(room_data.doors_world_direction[0] - room_data.doors_world_direction[1])
 				if door_difference == 1:
 					if all_rooms_sorted[Room.RoomType.ADJACENT_DOORS] and all_rooms_sorted[Room.RoomType.ADJACENT_DOORS].size() > 0:
-						selected_room = all_rooms_sorted[Room.RoomType.ADJACENT_DOORS].pick_random()
+						selected_room = all_rooms_sorted[Room.RoomType.ADJACENT_DOORS].pick_random().duplicate()
 				else:
 					if all_rooms_sorted[Room.RoomType.OPPOSITE_DOORS] and all_rooms_sorted[Room.RoomType.OPPOSITE_DOORS].size() > 0:
-						selected_room = all_rooms_sorted[Room.RoomType.OPPOSITE_DOORS].pick_random()
+						selected_room = all_rooms_sorted[Room.RoomType.OPPOSITE_DOORS].pick_random().duplicate()
 			3:
 				if all_rooms_sorted[Room.RoomType.THREE_DOORS] and all_rooms_sorted[Room.RoomType.THREE_DOORS].size() > 0:
-					selected_room = all_rooms_sorted[Room.RoomType.THREE_DOORS].pick_random()
+					selected_room = all_rooms_sorted[Room.RoomType.THREE_DOORS].pick_random().duplicate()
 			4:
 				if all_rooms_sorted[Room.RoomType.FOUR_DOORS] and all_rooms_sorted[Room.RoomType.FOUR_DOORS].size() > 0:
-					selected_room = all_rooms_sorted[Room.RoomType.FOUR_DOORS].pick_random()
+					selected_room = all_rooms_sorted[Room.RoomType.FOUR_DOORS].pick_random().duplicate()
 			_:
 				print("No room type found for ", room_data.number_of_doors, " doors.")
 				continue
@@ -302,11 +301,12 @@ func place_rooms_at_positions():
 		#selected_room.rotation_degrees = room_rotation
 
 		# Step 5: Add the room to the scene at the specified position
-		add_child(selected_room)
 		selected_room.position = position_levelwise * 352
+		selected_room.rotation_degrees = room_rotation
+		add_child(selected_room)
 
 		# Ensure the room is correctly placed in the placed_rooms dictionary
-		placed_rooms[position_levelwise] = room_data
+		placed_rooms[position_levelwise].room_scene = selected_room
 
 		print("Placed room at ", selected_room.position, " with rotation ", room_rotation)
 
