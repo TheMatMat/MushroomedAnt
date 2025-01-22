@@ -9,9 +9,13 @@ class_name Room extends Node2D
 
 static var all_rooms : Array[Room]
 
+enum RoomType {ONE_DOOR, OPPOSITE_DOORS, ADJACENT_DOORS, THREE_DOORS, FOUR_DOORS}
+
 var doors : Array[Door]
 
-@onready var _cam : CameraFollow = $/root/MainScene/Camera2D
+@export var room_type : RoomType
+
+@onready var _cam : CameraFollow = $/root/GenerationScene/Camera2D
 
 
 func _ready() -> void:
@@ -39,6 +43,8 @@ func get_world_bounds() -> Rect2:
 	result.position += position
 	return result
 
+func recenter_at(position : Vector2) -> void:
+	self.transform.origin = position - (get_local_bounds().size * Vector2(0.5, -0.5))
 
 func contains(point : Vector2) -> bool:
 	var bounds = get_world_bounds()
@@ -93,6 +99,36 @@ func get_position_offset(world_point : Vector2) -> Vector2i:
 		offset.y = clampi(int(local_point.y / (bounds.size.y / room_size.y)), 0, room_size.y - 1)
 	return offset
 
+# Function to determine door directions based on room type
+func get_doors_local_direction(room_type: Room.RoomType) -> Array[Utils.ORIENTATION]:
+	match room_type:
+		Room.RoomType.ONE_DOOR:
+			return [Utils.ORIENTATION.SOUTH]
+		Room.RoomType.OPPOSITE_DOORS:
+			return [Utils.ORIENTATION.EAST, Utils.ORIENTATION.WEST]
+		Room.RoomType.ADJACENT_DOORS:
+			return [Utils.ORIENTATION.SOUTH, Utils.ORIENTATION.WEST]
+		Room.RoomType.THREE_DOORS:
+			return [Utils.ORIENTATION.WEST, Utils.ORIENTATION.EAST, Utils.ORIENTATION.SOUTH]
+		Room.RoomType.FOUR_DOORS:
+			return [Utils.ORIENTATION.NORTH, Utils.ORIENTATION.EAST, Utils.ORIENTATION.SOUTH, Utils.ORIENTATION.WEST]
+		_:
+			return []
+
+func get_number_of_doors() -> int:
+	match room_type:
+		Room.RoomType.ONE_DOOR:
+			return 1
+		Room.RoomType.OPPOSITE_DOORS:
+			return 2
+		Room.RoomType.ADJACENT_DOORS:
+			return 2
+		Room.RoomType.THREE_DOORS:
+			return 3
+		Room.RoomType.FOUR_DOORS:
+			return 4
+		_:
+			return 0
 
 func _exit_tree() -> void:
 	all_rooms.erase(self)

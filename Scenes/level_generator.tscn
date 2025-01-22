@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://2aoiswc8fl6b"]
+
+[ext_resource type="Script" path="res://Scripts/level_generator.gd" id="1_kbtb0"]
+
+[node name="LevelGenerator" type="Node"]
+script = ExtResource("1_kbtb0")
+max_distance_to_spawn = 2

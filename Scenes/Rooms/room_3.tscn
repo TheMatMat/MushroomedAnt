@@ -4,6 +4,7 @@
 [ext_resource type="TileSet" uid="uid://boei5dbdfnuex" path="res://Resources/TileSets/placeholder_tileset.tres" id="2_sr7rr"]
 
 [node name="Room3" type="Node2D" node_paths=PackedStringArray("tilemap_layers")]
+position = Vector2(-176, 272)
 script = ExtResource("1_nujyu")
 tilemap_layers = [NodePath("Floor"), NodePath("Props")]
 
