@@ -17,6 +17,7 @@ var key_count : int
 # Quests
 var rng = RandomNumberGenerator.new()
 
+var has_started : bool
 var has_quest : bool
 var current_quest_type : int
 

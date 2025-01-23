@@ -11,12 +11,12 @@
 [node name="MainScene" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-100000, -100000)
+position = Vector2(-1e+06, -1e+06)
 zoom = Vector2(2, 2)
 script = ExtResource("2_liovv")
 
 [node name="Player" parent="." instance=ExtResource("1_qspk8")]
-position = Vector2(-100000, -100000)
+position = Vector2(-1e+06, -1e+06)
 
 [node name="hud" parent="." instance=ExtResource("7_i43eg")]
 
@@ -27,5 +27,5 @@ script = ExtResource("8_rxhct")
 
 [node name="LevelGenerator" parent="." instance=ExtResource("6_tjhvm")]
 
-[node name="Room1" parent="." instance=ExtResource("7_g4mhu")]
-position = Vector2(-100000, -100000)
+[node name="Hub" parent="." instance=ExtResource("7_g4mhu")]
+position = Vector2(-1e+06, -1e+06)

@@ -55,9 +55,12 @@ func _on_interact() -> void:
 			texts.push_back(Parser.Instance.generate_invalid_sentence())
 			hud.display_dialogue(texts, properties.name)
 		else:
-			texts.push_back("YOUHOU QUETE FINIE")
+			texts.push_back(Parser.Instance.generate_quest_kill_valid_sentence())
 			quest_finished.emit()
 			player.reset_enemies_killed()
 			player.reset_objects_collected()
-			player.generate_quest()
+			player.has_quest = false
+			player.has_started = false
+			Game_Manager.Instance.infection_level += 1 
+			LevelGenerator.Instance.unspawn_rooms()
 			hud.display_dialogue(texts, properties.name)

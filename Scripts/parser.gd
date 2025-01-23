@@ -16,7 +16,7 @@ const quest_kill2_valid_path = "res://Resources/Texts/Quest_Kill2_Valid.json"
 
 const quest_valid3_path = "res://Resources/Texts/Quest_Valid3.json"
 
-const quest_special1_path = "res://Resources/Texts/Quest_Special1.json"
+const quest_special1_path = "res://Resources/Texts/Quest_special1.json"
 const quest_special2_path = "res://Resources/Texts/Quest_Special2.json"
 
 const quest_fetch3_path = "res://Resources/Texts/Quest_fetch3.json"
@@ -179,7 +179,7 @@ func generate_quest_special_sentence() -> String:
 		1: 
 			text = quest_special2_parsed_text
 		2: 
-			text = quest_valid3_parsed_text
+			text = quest_special2_parsed_text
 			
 	if text == null || !text is Dictionary:
 		return ""
