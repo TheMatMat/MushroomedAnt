@@ -19,6 +19,6 @@ tile_map_data = PackedByteArray("AAAAAP//AAAAAAAAAgAFAAQAAAAAAAAAAgD7//r/AAAAAAA
 tile_set = ExtResource("2_phqbl")
 
 [connection signal="body_entered" from="Props/HeartCollectible" to="Props/HeartCollectible" method="_on_body_entered"]
-[connection signal="body_entered" from="Props/@Area2D@50178" to="Props/@Area2D@50178" method="_on_body_entered"]
-[connection signal="body_entered" from="Props/@Area2D@50179" to="Props/@Area2D@50179" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@19029" to="Props/@Area2D@19029" method="_on_body_entered"]
+[connection signal="body_entered" from="Props/@Area2D@19030" to="Props/@Area2D@19030" method="_on_body_entered"]
 [connection signal="body_entered" from="Props/QuestObject" to="Props/QuestObject" method="_on_body_entered"]
