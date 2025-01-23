@@ -1,0 +1,60 @@
+{
+  "origin": [
+    "Ces #creatures# … #ants#, elles #proliferate# #now#, je le #feel# grâce à mes racines. #kill# en #nbrFourmis# pour #reduce# #number#. "
+  ],
+  "creatures": [
+    "insectes",
+    "créatures",
+    "êtres",
+    "organismes"
+  ],
+  "ants": [
+    "les fourmis",
+    "des Formicidae",
+    "ces colonisatrices",
+    "Ces hyménoptères"
+  ],
+  "proliferate": [
+    "prolifèrent",
+    "pullulent",
+    "se multiplient",
+    "se développent"
+  ],
+  "now": [
+    "en continu",
+    "en ce moment même",
+    "sans cesse",
+    "continuellement"
+  ],
+  "feel": [
+    "sent",
+    "ressent",
+    "perçois",
+    "capte",
+    "sais"
+  ],
+  "kill": [
+    "Tue",
+    "Abat",
+    "Extermine",
+    "Assassine"
+  ],
+  "nbrFourmis": [
+    "3",
+    "4",
+    "5"
+  ],
+  "reduce":[
+    "réduire",
+    "diminuer",
+    "amoindrir",
+    "minimiser",
+    "affaiblir"
+  ],
+  "number":[
+  "leur nombre",
+  "leurs rangs",
+  "leurs effectifs",
+  "leur population"
+  ]
+}

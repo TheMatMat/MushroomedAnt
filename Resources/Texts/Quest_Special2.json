@@ -1,0 +1,56 @@
+{
+  "origin": [
+    "#power#, ces fourmis soldates. #want# ! #kill# en #nbrFourmis# pour que #assimilate# #strong# !"
+  ],
+  "assimilate":[
+    "je prenne",
+    "j'assimile",
+    "je dérobe",
+    "je m'empare de"
+  ],
+  "strong":[
+    "leur force",
+    "leur énergie",
+    "leur pouvoir",
+    "leur matière organique"
+  ],
+  "power": [
+    "Cette force",
+    "Cette puissance"
+  ],
+  "creatures": [
+    "insectes",
+    "créatures",
+    "êtres",
+    "organismes"
+  ],
+  "want": [
+    "Je la veux",
+    "Je la désire",
+    "Je la convoite"
+  ],
+  "kill": [
+    "Tue",
+    "Abat",
+    "Extermine",
+    "Assassine"
+  ],
+  "nbrFourmis": [
+    "3",
+    "4",
+    "5"
+  ],
+  "reduce":[
+    "réduire",
+    "diminuer",
+    "amoindrir",
+    "minimiser",
+    "affaiblir"
+  ],
+  "number":[
+  "leur nombre",
+  "leurs rangs",
+  "leurs effectifs",
+  "leur population"
+  ]
+}

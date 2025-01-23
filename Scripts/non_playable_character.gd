@@ -1,10 +1,18 @@
 extends StaticBody2D
+class_name InGame_NPC
+
+static var Instance : InGame_NPC
 
 @export var properties : NPC
 @export var sprite : Sprite2D
  
 signal interact
 signal quest_finished
+
+
+func _init() -> void:
+	Instance = self
+
 
 func _ready() -> void:
 	sprite.region_rect = properties.sprite_region
@@ -17,11 +25,17 @@ func _on_interact() -> void:
 	var quest_done = false
 	
 	if !Player.Instance.has_quest:
-		for line in properties.introduction_lines:
-			texts.push_back(line)
-		
-		texts.push_back("Voilà une quête.")
+		texts.push_back(Parser.Instance.generate_intro_sentence())
 		player.generate_quest()
+		
+		match player.current_quest_type:
+			player.QuestType.ENEMIES:
+				texts.push_back(Parser.Instance.generate_quest_kill_sentence())
+			player.QuestType.SPECIFIC_ENEMIES:
+				quest_done = player.enemies_killed[player.enemies_to_kill_index] >= player.enemies_to_kill_count
+			player.QuestType.OBJECT:
+				quest_done = player.current_object_quest_count >= player.current_object_quest_needed
+		
 		hud.display_dialogue(texts, properties.name)
 		
 	else:
@@ -36,7 +50,7 @@ func _on_interact() -> void:
 		if !quest_done:
 			hud.display_random_dialogue(properties.quest_non_finished_lines, properties.name)
 		else:
-			texts.push_back("Bien joué, voici une autre mission.")
+			texts.push_back(Parser.Instance.generate_quest_kill_valid_sentence())
 			quest_finished.emit()
 			player.reset_enemies_killed()
 			player.reset_objects_collected()

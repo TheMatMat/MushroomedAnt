@@ -1,0 +1,10 @@
+{ 
+  "origin":["#these# … fourmis spécifiques… #adjective#. #strong# ! Moi… #need#. Toi #kill# #nbrFourmis# ! #understood# !"], 
+  "these":["Celles-ci","Ces","Ceux là","Cette fois"],
+  "adjective":["Important","Plus de matière"],
+  "strong":["Forts", "Plus fort","Danger"],
+  "need":["besoin beaucoup force","besoin beaucoup matière","besoin force","besoin plus matière","besoin organismes","besoin d'elles"],
+  "kill":["tuer","ramène","récupère","abattre","assasiner"],
+  "nbrFourmis":["3","4","5"],
+  "understood":["Compris ?","Va","Continue","Aller","Vas-y","Fonce"]
+}

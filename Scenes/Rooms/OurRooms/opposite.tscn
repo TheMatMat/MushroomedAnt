@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/room.gd" id="1_88xlc"]
 [ext_resource type="TileSet" uid="uid://boei5dbdfnuex" path="res://Resources/TileSets/placeholder_tileset.tres" id="2_a1qin"]
 
-[node name="Room1" type="Node2D" node_paths=PackedStringArray("tilemap_layers")]
+[node name="Room2" type="Node2D" node_paths=PackedStringArray("tilemap_layers")]
 script = ExtResource("1_88xlc")
 tilemap_layers = [NodePath("Floor"), NodePath("Props")]
 room_type = 1

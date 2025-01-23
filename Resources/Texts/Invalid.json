@@ -1,0 +1,31 @@
+{
+  "origin": [
+    "#go#... #help##grow#... #eat# ! #quick# !"
+  ],
+  "go": [
+    "Va",
+    "Pars",
+    "Avance"
+  ],
+  "help": [
+    "Aide moi",
+    "Toi fais, moi",
+    "Toi aider, moi"
+  ],
+  "grow": [
+    "... Grandir",
+    " évolution",
+    " plus grand",
+    " plus fort"
+  ],
+  "eat": [
+    "... Manger",
+    "À manger",
+    "Faim"
+  ],
+  "quick": [
+    "Dépêches toi",
+    "Tout de suite",
+    "Maintenant"
+  ]
+}

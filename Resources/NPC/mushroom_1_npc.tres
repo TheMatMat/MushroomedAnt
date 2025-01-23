@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_7q68t")
-name = "Mushroomed Ant"
+name = "Albert"
 sprite_region = Rect2(64, 0, 32, 32)
 introduction_lines = Array[String](["J’ai réussi ! Toi… en vie ?... Parfait… moi grandir…. moi avoir quête pour toi… toi accomplir et moi grandir."])
 quest_non_finished_lines = Array[String](["Va…", "Fais moi grandir…", "À manger !", "Dépêche-toi !", "Pars !"])

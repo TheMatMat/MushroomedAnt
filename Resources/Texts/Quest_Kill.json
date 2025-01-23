@@ -1,0 +1,10 @@
+{ 
+  "origin":["#you#… #hear# Oui… #order# #nbrFourmis# #ants#. #fetch#. #hungry# !"], 
+  "you":["Tu","Toi","Fourmi"], 
+  "hear":["m'entends ?","m'écoutes ?","écoutes...","entends moi..."],
+  "order":["demande toi", "veux", "besoin", "moi attend"],  
+  "nbrFourmis":["5","4","3"],
+  "ants":["fourmis","êtres","corps"],
+  "fetch":["Toi aller chercher","Toi fournir","Toi récupérer","Va chercher","Pars chercher","Pars récupérer","Va récupérer","Récupère pour moi"],
+  "hungry":["Moi faim","Moi ventre gronde","Moi manger","Moi besoin absorber","Moi consommer"] 
+}
