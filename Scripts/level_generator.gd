@@ -461,3 +461,13 @@ func print_placed_rooms():
 			  " | Rotation: ", placed_rooms[room].rotation, 
 			  " | Distance to spawn: ", placed_rooms[room].distance_to_spawn, 
 			  " | Doors: ", placed_rooms[room].doors_world_direction)
+			
+func unspawn_rooms() -> void:
+	for room in placed_rooms:
+		var room_data = placed_rooms[room]
+		
+		if room_data.room_scene != null:
+			remove_child(room_data.room_scene)
+			room_data.room_scene.queue_free()
+
+	placed_rooms.clear()

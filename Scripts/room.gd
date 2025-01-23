@@ -163,3 +163,20 @@ func get_number_of_doors() -> int:
 
 func _exit_tree() -> void:
 	all_rooms.erase(self)
+	
+func spawn_enemy1() -> void:
+	if Game_Manager.Instance.enemy1_scene == null:
+		return
+	
+	var enemy_instance = Game_Manager.Instance.enemy1_scene.instantiate()
+	call_deferred("add_child", enemy_instance)
+	enemy_instance.transform.origin = transform.origin
+
+
+func spawn_enemy2() -> void:
+	if Game_Manager.Instance.enemy2_scene == null:
+		return
+	
+	var enemy_instance = Game_Manager.Instance.enemy2_scene.instantiate()
+	call_deferred("add_child", enemy_instance)
+	enemy_instance.transform.origin = transform.origin
