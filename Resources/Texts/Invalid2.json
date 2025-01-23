@@ -1,0 +1,21 @@
+{
+  "origin": [
+    "#one# #two# #three#"
+  ],
+  "three":[
+    "Retourne faire ce que je t’ai dit de faire !",
+    "Tu gaspilles ton temps ici ? Dépêche-toi !",
+    "Si tu veux me servir correctement, achève rapidement cette mission.",
+    "Tout doit m'appartenir."
+  ],
+  "two": [
+    "Pathétique.",
+    "",
+    "Ne traîne pas !"
+  ],
+  "one": [
+    "Es-tu déjà fatigué ?",
+    "Il reste tant à faire...",
+    "Ma grandeur t'appelle à l'action. "
+  ]
+}

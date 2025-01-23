@@ -31,10 +31,14 @@ func _on_interact() -> void:
 		match player.current_quest_type:
 			player.QuestType.ENEMIES:
 				texts.push_back(Parser.Instance.generate_quest_kill_sentence())
+				player.enemies_to_kill_count = Parser.Instance.nbr_fourmi
+				hud.quest_count.text = "0/" + str(player.enemies_to_kill_count)
 			player.QuestType.SPECIFIC_ENEMIES:
-				quest_done = player.enemies_killed[player.enemies_to_kill_index] >= player.enemies_to_kill_count
+				texts.push_back(Parser.Instance.generate_quest_special_sentence())
+				player.enemies_to_kill_count = Parser.Instance.nbr_fourmi
+				hud.quest_count.text = "0/" + str(player.enemies_to_kill_count)
 			player.QuestType.OBJECT:
-				quest_done = player.current_object_quest_count >= player.current_object_quest_needed
+				texts.push_back(Parser.Instance.generate_quest_fetch_sentence())
 		
 		hud.display_dialogue(texts, properties.name)
 		
@@ -48,9 +52,9 @@ func _on_interact() -> void:
 				quest_done = player.current_object_quest_count >= player.current_object_quest_needed
 		
 		if !quest_done:
-			hud.display_random_dialogue(properties.quest_non_finished_lines, properties.name)
+			hud.display_random_dialogue(Parser.Instance.generate_quest_kill_valid_sentence(), properties.name)
 		else:
-			texts.push_back(Parser.Instance.generate_quest_kill_valid_sentence())
+			texts.push_back("YOUHOU QUETE FINIE")
 			quest_finished.emit()
 			player.reset_enemies_killed()
 			player.reset_objects_collected()
