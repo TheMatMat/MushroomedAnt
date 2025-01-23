@@ -1,4 +1,6 @@
-extends Node
+class_name LevelGenerator extends Node
+
+static var Instance : LevelGenerator
 
 class RoomData:
 	var position_levelwise: Vector2
@@ -23,6 +25,9 @@ var placed_rooms : Dictionary
 @export var max_distance_to_spawn : int = 4
 @export var room_size : int = 13 # In number of tile
 @export var tile_size : int = 32 # In number of pixel
+
+func _init() -> void:
+	Instance = self
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -92,7 +97,6 @@ func _ready() -> void:
 	
 	ensure_all_rooms_connected()
 	place_narrative_rooms(randi() % 2 + 1)
-	
 	
 	place_rooms_at_positions()
 	

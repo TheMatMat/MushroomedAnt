@@ -11,6 +11,11 @@ static var all_rooms : Array[Room]
 
 enum RoomType {ONE_DOOR, OPPOSITE_DOORS, ADJACENT_DOORS, THREE_DOORS, FOUR_DOORS, NARRATIVE, SPAWN}
 
+enum InfectionLevel {HIGH, MEDIUM, LOW}
+@export var tilemaplayer_high : TileMapLayer
+@export var tilemaplayer_medium : TileMapLayer
+@export var tilemaplayer_low : TileMapLayer
+
 var doors : Array[Door]
 
 @export var room_type : RoomType
@@ -18,11 +23,10 @@ var doors : Array[Door]
 @onready var _cam : CameraFollow = $/root/GenerationScene/Camera2D
 
 
+
+
 func _ready() -> void:
 	all_rooms.push_back(self)
-	if is_start_room:
-		Player.Instance.enter_room(self)
-
 
 func get_local_bounds() -> Rect2:
 	var room_bounds = Rect2()
@@ -36,7 +40,30 @@ func get_local_bounds() -> Rect2:
 		bounds.size = Vector2i(bounds.size.x * size_pixel.x, bounds.size.y * size_pixel.y)
 		room_bounds = room_bounds.merge(bounds)
 	return room_bounds
-
+		
+		
+func set_infection_aspect(infection_level : InfectionLevel) -> void:
+	match infection_level:
+		InfectionLevel.HIGH:
+			if tilemaplayer_high != null:
+				tilemaplayer_high.show()
+				tilemaplayer_medium.hide()
+				tilemaplayer_low.hide()
+		InfectionLevel.MEDIUM:
+			if tilemaplayer_medium != null:
+				tilemaplayer_high.hide()
+				tilemaplayer_medium.show()
+				tilemaplayer_low.hide()
+		InfectionLevel.LOW:
+			if tilemaplayer_low != null:
+				tilemaplayer_high.hide()
+				tilemaplayer_medium.hide()
+				tilemaplayer_low.show()
+		_:
+			tilemaplayer_high.hide()
+			tilemaplayer_medium.hide()
+			tilemaplayer_low.show()
+			
 
 func get_world_bounds() -> Rect2:
 	var result = get_local_bounds()

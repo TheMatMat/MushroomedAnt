@@ -8,7 +8,6 @@
 
 [node name="LevelGenerator" parent="." instance=ExtResource("1_npg4u")]
 max_distance_to_spawn = 5
-room_size = 11
 
 [node name="Player" parent="." instance=ExtResource("2_hfiqq")]
 life = 100000000000000000
