@@ -135,15 +135,11 @@ func generate_quest() -> void:
 	match random:
 		QuestType.ENEMIES:
 			current_quest_type = QuestType.ENEMIES
-			enemies_to_kill_count = rng.randi_range(4, 8)
 			hud.quest_icon.texture = hud.enemies_sprite
-			hud.quest_count.text = "0/" + str(enemies_to_kill_count)
 		QuestType.SPECIFIC_ENEMIES:
 			current_quest_type = QuestType.SPECIFIC_ENEMIES
-			enemies_to_kill_index = rng.randi_range(0, 1)
-			enemies_to_kill_count = rng.randi_range(4, 8)
+			enemies_to_kill_index = 1
 			hud.quest_icon.texture = hud.enemy_sprite[enemies_to_kill_index]
-			hud.quest_count.text = "0/" + str(enemies_to_kill_count)
 		QuestType.OBJECT:
 			current_quest_type = QuestType.OBJECT
 			current_object_quest_needed = 1

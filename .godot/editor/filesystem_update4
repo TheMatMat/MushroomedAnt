@@ -1,6 +1,6 @@
-res://Scenes/generation_scene.tscn
+res://Scenes/Rooms/OurRooms/1door.tscn
 res://Resources/TileSets/placeholder_tileset.tres
-res://Scripts/level_generator.gd
+res://Scenes/generation_scene.tscn
 res://Scenes/level_generator.tscn
 res://Scenes/main_scene.tscn
 res://Scenes/Rooms/room_1.tscn
@@ -9,8 +9,9 @@ res://Scenes/Rooms/room_3.tscn
 res://Scenes/Rooms/room_4.tscn
 res://Scenes/Rooms/OurRooms/4doors.tscn
 res://Scenes/Rooms/OurRooms/3doors.tscn
-res://Scenes/Rooms/OurRooms/1door.tscn
 res://Scenes/Rooms/OurRooms/adjacent.tscn
 res://Scenes/Rooms/OurRooms/opposite.tscn
-res://Scripts/camera_follow.gd
 res://Scenes/door_closed.tscn
+res://Scripts/camera_follow.gd
+res://Scripts/level_generator.gd
+res://Scripts/room.gd

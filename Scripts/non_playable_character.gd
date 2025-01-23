@@ -1,10 +1,18 @@
 extends StaticBody2D
+class_name InGame_NPC
+
+static var Instance : InGame_NPC
 
 @export var properties : NPC
 @export var sprite : Sprite2D
  
 signal interact
 signal quest_finished
+
+
+func _init() -> void:
+	Instance = self
+
 
 func _ready() -> void:
 	sprite.region_rect = properties.sprite_region
@@ -17,11 +25,21 @@ func _on_interact() -> void:
 	var quest_done = false
 	
 	if !Player.Instance.has_quest:
-		for line in properties.introduction_lines:
-			texts.push_back(line)
-		
-		texts.push_back("Voilà une quête.")
+		texts.push_back(Parser.Instance.generate_intro_sentence())
 		player.generate_quest()
+		
+		match player.current_quest_type:
+			player.QuestType.ENEMIES:
+				texts.push_back(Parser.Instance.generate_quest_kill_sentence())
+				player.enemies_to_kill_count = Parser.Instance.nbr_fourmi
+				hud.quest_count.text = "0/" + str(player.enemies_to_kill_count)
+			player.QuestType.SPECIFIC_ENEMIES:
+				texts.push_back(Parser.Instance.generate_quest_special_sentence())
+				player.enemies_to_kill_count = Parser.Instance.nbr_fourmi
+				hud.quest_count.text = "0/" + str(player.enemies_to_kill_count)
+			player.QuestType.OBJECT:
+				texts.push_back(Parser.Instance.generate_quest_fetch_sentence())
+		
 		hud.display_dialogue(texts, properties.name)
 		
 	else:
@@ -34,9 +52,9 @@ func _on_interact() -> void:
 				quest_done = player.current_object_quest_count >= player.current_object_quest_needed
 		
 		if !quest_done:
-			hud.display_random_dialogue(properties.quest_non_finished_lines, properties.name)
+			hud.display_random_dialogue(Parser.Instance.generate_quest_kill_valid_sentence(), properties.name)
 		else:
-			texts.push_back("Bien joué, voici une autre mission.")
+			texts.push_back("YOUHOU QUETE FINIE")
 			quest_finished.emit()
 			player.reset_enemies_killed()
 			player.reset_objects_collected()

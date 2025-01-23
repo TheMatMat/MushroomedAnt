@@ -1,0 +1,13 @@
+{ 
+  "origin":["J'ai réussi ! Toi...  #personne# ? #content#...#progression#... Moi avoir #quest# pour toi ... toi #do# #for# #progression2#"], 
+  "where":["cet endroit", "cette colonie", "cette zone"], 
+  "order":["demande", "veux", "besoin", "ordonne"], 
+  "exploration":["explore", "découvre", "inspecte", "décortique", "cherche"], 
+  "personne":["en vie", "vivant", "avoir survécu"], 
+  "content":["parfait","super","bravo","oui"], 
+  "progression":["moi grandir","je grandir","moi manger","je manger"] , 
+  "progression2":["moi grandir","je grandir","moi manger","moi plus fort"] , 
+  "quest":["mission","quête","requête","objectif","demande"], 
+  "do":["faire","accomplir","réussir"], 
+  "for":["et","pour"]
+}

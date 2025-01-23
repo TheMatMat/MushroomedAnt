@@ -1,0 +1,55 @@
+{
+  "origin": [
+	"#exist##treasure#. #want# ! #find# #fetch#. Et #kill# #obstacles# #way# #if# !"
+  ],
+  "if":[
+	"s'il le faut",
+	"si nécessaire"
+  ],
+  "obstacles":[
+	"tous les obstacles",
+	"les fourmis",
+	"les ennemis"
+  ],
+  "way":[
+	"sur ton chemin",
+	"sur le chemin",
+	"sur ta route",
+	"qui te bloqueraient la route"
+  ],
+  "treasure":[
+	"un trésor",
+	"un artéfact",
+	"une délicatesse"
+  ],
+  "exist":[
+	"Il existe ",
+	"J'ai découvert ",
+	"J'ai pris connaissance d'"
+  ],
+  "want": [
+	"Cela doit être à moi",
+	"J'en suis désireux",
+	"Cela m'est destiné",
+	"J'en suis convoiteux",
+	"Je suis tombé sous son charme"
+  ],
+  "kill": [
+	"détruis",
+	"abat",
+	"extermine",
+	"débarasse-toi de"
+  ],
+  "find":[
+	"Trouve",
+	"Cherche",
+	"Découvre",
+	"Mets la main dessus",
+	"Empare-toi en"
+  ],
+  "fetch": [
+	"et ramène-moi cela",
+	"et récupère cela",
+	"et offre le moi"
+  ]
+}
