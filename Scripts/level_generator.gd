@@ -158,6 +158,9 @@ func place_rooms(current_room_data : RoomData, initial_direction : Utils.ORIENTA
 
 func add_doors_to_common_walls():
 	for position_levelwise in placed_rooms.keys():
+		if placed_rooms[position_levelwise].doors_world_direction.size() >= 2:
+			continue
+			
 		var room_data = placed_rooms[position_levelwise]
 
 		# Define neighbor directions and positions
@@ -179,7 +182,7 @@ func add_doors_to_common_walls():
 				var opposite_direction = Utils.get_opposite_direction(direction)
 
 				# Randomly decide to add a door for this common wall
-				if direction not in room_data.doors_world_direction and randi() % 2 == 0:
+				if direction not in room_data.doors_world_direction and randi() % 6 == 0:
 					room_data.doors_world_direction.append(direction)
 					if opposite_direction not in neighbor_data.doors_world_direction:
 						neighbor_data.doors_world_direction.append(opposite_direction)
@@ -248,8 +251,10 @@ func ensure_all_rooms_connected():
 			var opposite_direction = Utils.get_opposite_direction(direction_to_closest)
 
 			# Add doors to link the rooms
-			placed_rooms[unconnected_position].doors_world_direction.append(opposite_direction)
-			placed_rooms[closest_position].doors_world_direction.append(direction_to_closest)
+			if opposite_direction not in placed_rooms[unconnected_position].doors_world_direction:
+				placed_rooms[unconnected_position].doors_world_direction.append(opposite_direction)
+			if direction_to_closest not in placed_rooms[closest_position].doors_world_direction:
+				placed_rooms[closest_position].doors_world_direction.append(direction_to_closest)
 
 		# Update visited rooms
 		visited_rooms[unconnected_position] = true
@@ -267,11 +272,11 @@ func place_rooms_at_positions():
 				if all_rooms_sorted[Room.RoomType.ONE_DOOR] and all_rooms_sorted[Room.RoomType.ONE_DOOR].size() > 0:
 					selected_room = all_rooms_sorted[Room.RoomType.ONE_DOOR].pick_random().duplicate()
 			2:
-				var door_difference = abs(room_data.doors_world_direction[0] - room_data.doors_world_direction[1])
-				if door_difference == 1:
+				var door_difference = abs(abs(room_data.doors_world_direction[0]) - abs(room_data.doors_world_direction[1]))
+				if door_difference == 1 or door_difference == 3:
 					if all_rooms_sorted[Room.RoomType.ADJACENT_DOORS] and all_rooms_sorted[Room.RoomType.ADJACENT_DOORS].size() > 0:
 						selected_room = all_rooms_sorted[Room.RoomType.ADJACENT_DOORS].pick_random().duplicate()
-				else:
+				elif door_difference == 2:
 					if all_rooms_sorted[Room.RoomType.OPPOSITE_DOORS] and all_rooms_sorted[Room.RoomType.OPPOSITE_DOORS].size() > 0:
 						selected_room = all_rooms_sorted[Room.RoomType.OPPOSITE_DOORS].pick_random().duplicate()
 			3:
@@ -284,6 +289,9 @@ func place_rooms_at_positions():
 				print("No room type found for ", room_data.number_of_doors, " doors.")
 				continue
 
+		if selected_room == null:
+			continue
+			
 		# Step 2: Attempt to match local and world directions by rotating
 		var default_directions = selected_room.get_doors_local_direction(selected_room.room_type)
 		var room_rotation = 0
@@ -292,7 +300,7 @@ func place_rooms_at_positions():
 		while room_rotation < 360:
 			# Transform local directions to world directions based on the current rotation
 			var transformed_directions = Utils.transform_directions(default_directions, room_rotation)
-			
+			print(default_directions.size(), " - ", transformed_directions.size())
 			# Check if the transformed directions match the expected world directions
 			if directions_match(transformed_directions, room_data.doors_world_direction):
 				matched = true
@@ -304,7 +312,7 @@ func place_rooms_at_positions():
 		# Step 3: If no match is found after a full turn, log and skip placement
 		if not matched:
 			print("Could not match local and world directions for room at ", position_levelwise)
-			continue
+			
 
 		# Step 4: Apply the calculated rotation to the room
 		#selected_room.rotation_degrees = room_rotation

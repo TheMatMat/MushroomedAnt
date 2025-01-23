@@ -76,11 +76,11 @@ static func direction_to_vector(direction: Utils.ORIENTATION) -> Vector2:
 			return Vector2.ZERO # Default case for invalid input
 
 static func get_direction(offset: Vector2) -> Utils.ORIENTATION:
-	if offset == Vector2(0, 1):
+	if offset == Vector2(0, -1):
 		return Utils.ORIENTATION.NORTH
 	elif offset == Vector2(1, 0):
 		return Utils.ORIENTATION.EAST
-	elif offset == Vector2(0, -1):
+	elif offset == Vector2(0, 1):
 		return Utils.ORIENTATION.SOUTH
 	elif offset == Vector2(-1, 0):
 		return Utils.ORIENTATION.WEST
