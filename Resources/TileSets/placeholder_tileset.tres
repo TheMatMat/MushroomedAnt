@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://byy6simx8nm3a" path="res://Scenes/enemy2.tscn" id="9_86le6"]
 [ext_resource type="PackedScene" uid="uid://dg4nnt3bdm7r4" path="res://Scenes/hidden_spikes.tscn" id="10_ed21d"]
 [ext_resource type="PackedScene" uid="uid://bv53wen5055md" path="res://Scenes/hole_tile.tscn" id="11_74bcn"]
-[ext_resource type="Texture2D" uid="uid://b58c8pab0wg4u" path="res://Resources/TileSets/TileSet.png" id="12_xb6v6"]
+[ext_resource type="Texture2D" uid="uid://tkhnjh7c2m2m" path="res://Resources/TileSets/TileSet.png" id="12_xb6v6"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1s6bk"]
 resource_name = "Collectibles"
@@ -149,7 +149,7 @@ scenes/5/scene = ExtResource("9_86le6")
 scenes/6/scene = ExtResource("10_ed21d")
 scenes/7/scene = ExtResource("11_74bcn")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_abxsd"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6luqi"]
 texture = ExtResource("12_xb6v6")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -224,4 +224,4 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_qyah5")
 sources/0 = SubResource("TileSetScenesCollectionSource_1s6bk")
 sources/2 = SubResource("TileSetScenesCollectionSource_efedq")
-sources/3 = SubResource("TileSetAtlasSource_abxsd")
+sources/4 = SubResource("TileSetAtlasSource_6luqi")
