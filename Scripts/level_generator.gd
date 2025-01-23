@@ -21,6 +21,8 @@ var placed_rooms : Dictionary
 	}
 
 @export var max_distance_to_spawn : int = 4
+@export var room_size : int = 13 # In number of tile
+@export var tile_size : int = 32 # In number of pixel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -30,7 +32,9 @@ func _ready() -> void:
 		Room.RoomType.OPPOSITE_DOORS: [],
 		Room.RoomType.ADJACENT_DOORS: [],
 		Room.RoomType.THREE_DOORS: [],
-		Room.RoomType.FOUR_DOORS: []
+		Room.RoomType.FOUR_DOORS: [],
+		Room.RoomType.NARRATIVE: [],
+		Room.RoomType.SPAWN: []
 	}
 	
 	for room in all_rooms:
@@ -44,8 +48,13 @@ func _ready() -> void:
 		print("No room to spawn")
 		return
 	
+	var first_room : Room = null
 	# Create the first room
-	var first_room = all_rooms.pick_random()
+	if(all_rooms_sorted[Room.RoomType.SPAWN] and all_rooms_sorted.has[Room.RoomType.SPAWN].size() > 0):
+		first_room = all_rooms_sorted[Room.RoomType.SPAWN].pick_random()
+	else:
+		first_room = all_rooms.pick_random()
+		
 	Player.Instance._room = first_room
 	Player.Instance.transform.origin = first_room.transform.origin
 	
@@ -301,7 +310,7 @@ func place_rooms_at_positions():
 		#selected_room.rotation_degrees = room_rotation
 
 		# Step 5: Add the room to the scene at the specified position
-		selected_room.position = position_levelwise * 352
+		selected_room.position = position_levelwise * (room_size * tile_size)
 		selected_room.rotation_degrees = room_rotation
 		add_child(selected_room)
 

@@ -12,11 +12,9 @@ func _ready() -> void:
 	position = _target_position
 	_target = Player.Instance
 
-
 func _process(delta: float) -> void:
-	refresh_target_position()
-	position = lerp(position, _target_position, delta * lerp_speed)
-
+	#refresh_target_position()
+	position = lerp(position, _target.position, delta * lerp_speed)
 
 func set_bounds(bounds : Rect2) -> void:
 	var cam = get_viewport().get_camera_2d()

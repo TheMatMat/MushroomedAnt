@@ -9,7 +9,7 @@ class_name Room extends Node2D
 
 static var all_rooms : Array[Room]
 
-enum RoomType {ONE_DOOR, OPPOSITE_DOORS, ADJACENT_DOORS, THREE_DOORS, FOUR_DOORS}
+enum RoomType {ONE_DOOR, OPPOSITE_DOORS, ADJACENT_DOORS, THREE_DOORS, FOUR_DOORS, NARRATIVE, SPAWN}
 
 var doors : Array[Door]
 
@@ -112,6 +112,10 @@ func get_doors_local_direction(room_type: Room.RoomType) -> Array[Utils.ORIENTAT
 			return [Utils.ORIENTATION.WEST, Utils.ORIENTATION.EAST, Utils.ORIENTATION.SOUTH]
 		Room.RoomType.FOUR_DOORS:
 			return [Utils.ORIENTATION.NORTH, Utils.ORIENTATION.EAST, Utils.ORIENTATION.SOUTH, Utils.ORIENTATION.WEST]
+		Room.RoomType.SPAWN:
+			return [Utils.ORIENTATION.SOUTH]
+		Room.RoomType.NARRATIVE:
+			return [Utils.ORIENTATION.SOUTH]
 		_:
 			return []
 
