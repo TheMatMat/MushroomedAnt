@@ -20,7 +20,7 @@ var doors : Array[Door]
 
 @export var room_type : RoomType
 
-@onready var _cam : CameraFollow = $/root/GenerationScene/Camera2D
+@onready var _cam : CameraFollow = $/root/MainScene/Camera2D
 
 
 

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc82up11osu2l"]
+
+[ext_resource type="Script" path="res://Scripts/hub_trigger.gd" id="1_wj2j1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxpyt"]
+
+[node name="HubTrigger" type="Area2D"]
+script = ExtResource("1_wj2j1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qxpyt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -29,8 +29,13 @@ var placed_rooms : Dictionary
 func _init() -> void:
 	Instance = self
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+	
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func spawn_rooms() -> void:
 	all_rooms = dir_contents("res://Scenes/Rooms/OurRooms")
 	all_rooms_sorted = {
 		Room.RoomType.ONE_DOOR: [],
@@ -99,10 +104,7 @@ func _ready() -> void:
 	place_narrative_rooms(randi() % 2 + 1)
 	
 	place_rooms_at_positions()
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+
 
 func place_rooms(current_room_data : RoomData, initial_direction : Utils.ORIENTATION, incoming_direction : Utils.ORIENTATION) -> void:
 	placed_rooms[current_room_data.position_levelwise] = current_room_data

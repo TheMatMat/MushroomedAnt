@@ -52,7 +52,8 @@ func _on_interact() -> void:
 				quest_done = player.current_object_quest_count >= player.current_object_quest_needed
 		
 		if !quest_done:
-			hud.display_random_dialogue(Parser.Instance.generate_quest_kill_valid_sentence(), properties.name)
+			texts.push_back(Parser.Instance.generate_invalid_sentence())
+			hud.display_dialogue(texts, properties.name)
 		else:
 			texts.push_back("YOUHOU QUETE FINIE")
 			quest_finished.emit()

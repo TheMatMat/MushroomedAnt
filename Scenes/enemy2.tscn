@@ -25,6 +25,7 @@ default_movement = ExtResource("2_582eu")
 stunned_movemement = ExtResource("3_3d0ss")
 attack_scene = ExtResource("4_h1n10")
 attack_spawn_point = NodePath("BodySprite/NoseSprite")
+attack_cooldown = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_p1d5c")
