@@ -15,3 +15,4 @@ life = 100000000000000000
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("3_cint6")
+lerp_speed = 20.0
