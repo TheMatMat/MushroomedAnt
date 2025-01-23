@@ -1,10 +1,10 @@
-[gd_resource type="TileSet" load_steps=20 format=3 uid="uid://boei5dbdfnuex"]
+[gd_resource type="TileSet" load_steps=22 format=3 uid="uid://boei5dbdfnuex"]
 
 [ext_resource type="PackedScene" uid="uid://nmpi1435amt" path="res://Scenes/key_collectible.tscn" id="1_k7xku"]
 [ext_resource type="Texture2D" uid="uid://dkkti4sg4v785" path="res://Sprites/tilemapFloor.png" id="1_ylhcx"]
 [ext_resource type="PackedScene" uid="uid://dov4nkfsf27hs" path="res://Scenes/heart_collectible.tscn" id="2_3xi7r"]
 [ext_resource type="PackedScene" uid="uid://tib5hxa4i6gy" path="res://Scenes/quest_object.tscn" id="3_5auxh"]
-[ext_resource type="PackedScene" uid="uid://bc82up11osu2l" path="res://Scenes/hub_trigger.tscn" id="3_amycq"]
+[ext_resource type="PackedScene" path="res://Scenes/hub_trigger.tscn" id="3_amycq"]
 [ext_resource type="PackedScene" uid="uid://b0ahenmxn2ain" path="res://Scenes/enemy.tscn" id="4_xwwxj"]
 [ext_resource type="PackedScene" uid="uid://cinljgej7owpj" path="res://Scenes/spikes.tscn" id="5_n5j7o"]
 [ext_resource type="PackedScene" uid="uid://caqkxr3u45dsp" path="res://Scenes/door_closed.tscn" id="6_oiqyd"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bv53wen5055md" path="res://Scenes/hole_tile.tscn" id="11_74bcn"]
 [ext_resource type="Texture2D" uid="uid://tkhnjh7c2m2m" path="res://Resources/TileSets/TileSet.png" id="12_xb6v6"]
 [ext_resource type="Texture2D" uid="uid://ckifx3cttkw4c" path="res://Resources/TileSets/tilepalettenarrav2.png" id="13_mjehe"]
+[ext_resource type="Texture2D" uid="uid://b8a26okrpi4ta" path="res://Resources/TileSets/tileset2.png" id="13_rbla3"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1s6bk"]
 resource_name = "Collectibles"
@@ -152,6 +153,28 @@ scenes/5/scene = ExtResource("9_86le6")
 scenes/6/scene = ExtResource("10_ed21d")
 scenes/7/scene = ExtResource("11_74bcn")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ui17q"]
+texture = ExtResource("13_rbla3")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6luqi"]
 texture = ExtResource("12_xb6v6")
 texture_region_size = Vector2i(32, 32)
@@ -287,3 +310,4 @@ sources/2 = SubResource("TileSetScenesCollectionSource_efedq")
 sources/4 = SubResource("TileSetAtlasSource_6luqi")
 sources/6 = SubResource("TileSetAtlasSource_tt3mc")
 sources/1 = SubResource("TileSetAtlasSource_qyah5")
+sources/3 = SubResource("TileSetAtlasSource_ui17q")
