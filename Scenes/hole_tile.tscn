@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://tkhnjh7c2m2m" path="res://Resources/TileSets/TileSet.png" id="2_q2rs2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdsvr"]
-size = Vector2(30, 32)
+size = Vector2(30, 30.5)
 
 [node name="HoleTile" type="Area2D"]
 script = ExtResource("1_rq8fh")
@@ -17,12 +17,13 @@ shape = SubResource("RectangleShape2D_vdsvr")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_q2rs2")
 region_enabled = true
-region_rect = Rect2(32, 63.562, 33.515, 32)
+region_rect = Rect2(32, 64, 32, 32)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, -0.5)
+visible = false
+position = Vector2(0, 0.25)
 shape = SubResource("RectangleShape2D_vdsvr")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

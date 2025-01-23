@@ -11,6 +11,7 @@ load_path = "res://.godot/imported/HP Heal.png-38ee110ef9a494175269929fb1bd22fb.
 script = ExtResource("1_0gye8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_qxpyt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
