@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dg4nnt3bdm7r4"]
 
 [ext_resource type="Script" path="res://Scripts/hidden_spikes.gd" id="1_yeu1o"]
-[ext_resource type="Texture2D" uid="uid://dkkti4sg4v785" path="res://Sprites/tilemapFloor.png" id="2_spiyf"]
+[ext_resource type="Texture2D" uid="uid://b58c8pab0wg4u" path="res://Resources/TileSets/TileSet.png" id="2_0x2fb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdsvr"]
 size = Vector2(22, 25)
@@ -15,9 +15,9 @@ position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_vdsvr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_spiyf")
+texture = ExtResource("2_0x2fb")
 region_enabled = true
-region_rect = Rect2(129, 0, 30, 32)
+region_rect = Rect2(224, 64.5, 32, 32)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
