@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4puw1"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l3qx6"]
-load_path = "res://.godot/imported/props.png-ed04fc63ed36929630d14c4369b21a01.ctex"
+load_path = "res://.godot/imported/tileset2.png-954b72b3253b40ee79d05d9c6e42e7a3.ctex"
 
 [node name="QuestObject" type="Area2D" node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_catij")
@@ -17,9 +17,10 @@ sprite = NodePath("Sprite2D")
 shape = SubResource("RectangleShape2D_4puw1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 20
 scale = Vector2(0.75, 0.75)
 texture = SubResource("CompressedTexture2D_l3qx6")
 region_enabled = true
-region_rect = Rect2(0, 0, 31, 31)
+region_rect = Rect2(192, 32, 31, 31)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

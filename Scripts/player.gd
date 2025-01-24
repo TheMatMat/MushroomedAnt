@@ -127,6 +127,7 @@ func check_if_item_needed(object_index : int) -> void:
 	if object_index == current_object_quest_index:
 		current_object_quest_count += 1
 		get_tree().get_root().get_node("MainScene/hud").quest_count.text = str(current_object_quest_count) + "/" + str(current_object_quest_needed)
+		global_transform.origin = Vector2(-1000000, -1000000)
 
 
 func generate_quest() -> void:
