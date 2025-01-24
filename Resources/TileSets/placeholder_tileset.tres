@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dkkti4sg4v785" path="res://Sprites/tilemapFloor.png" id="1_ylhcx"]
 [ext_resource type="PackedScene" uid="uid://dov4nkfsf27hs" path="res://Scenes/heart_collectible.tscn" id="2_3xi7r"]
 [ext_resource type="PackedScene" uid="uid://tib5hxa4i6gy" path="res://Scenes/quest_object.tscn" id="3_5auxh"]
-[ext_resource type="PackedScene" uid="uid://bc82up11osu2l" path="res://Scenes/hub_trigger.tscn" id="3_amycq"]
+[ext_resource type="PackedScene" path="res://Scenes/hub_trigger.tscn" id="3_amycq"]
 [ext_resource type="PackedScene" uid="uid://b0ahenmxn2ain" path="res://Scenes/enemy.tscn" id="4_xwwxj"]
 [ext_resource type="PackedScene" uid="uid://cinljgej7owpj" path="res://Scenes/spikes.tscn" id="5_n5j7o"]
 [ext_resource type="PackedScene" uid="uid://caqkxr3u45dsp" path="res://Scenes/door_closed.tscn" id="6_oiqyd"]
