@@ -153,28 +153,6 @@ scenes/5/scene = ExtResource("9_86le6")
 scenes/6/scene = ExtResource("10_ed21d")
 scenes/7/scene = ExtResource("11_74bcn")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ui17q"]
-texture = ExtResource("13_rbla3")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6luqi"]
 texture = ExtResource("12_xb6v6")
 texture_region_size = Vector2i(32, 32)
@@ -243,6 +221,28 @@ texture_region_size = Vector2i(32, 32)
 6:7/0 = 0
 7:7/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dv875"]
+texture = ExtResource("13_rbla3")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tt3mc"]
 texture = ExtResource("13_mjehe")
 texture_region_size = Vector2i(32, 32)
@@ -310,4 +310,4 @@ sources/2 = SubResource("TileSetScenesCollectionSource_efedq")
 sources/4 = SubResource("TileSetAtlasSource_6luqi")
 sources/6 = SubResource("TileSetAtlasSource_tt3mc")
 sources/1 = SubResource("TileSetAtlasSource_qyah5")
-sources/3 = SubResource("TileSetAtlasSource_ui17q")
+sources/5 = SubResource("TileSetAtlasSource_dv875")
