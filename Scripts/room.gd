@@ -165,7 +165,7 @@ func _exit_tree() -> void:
 	all_rooms.erase(self)
 	
 func spawn_enemy1() -> void:
-	if Game_Manager.Instance.enemy1_scene == null:
+	if Game_Manager.Instance != null and Game_Manager.Instance.enemy1_scene == null:
 		return
 	
 	var enemy_instance = Game_Manager.Instance.enemy1_scene.instantiate()
@@ -174,7 +174,7 @@ func spawn_enemy1() -> void:
 
 
 func spawn_enemy2() -> void:
-	if Game_Manager.Instance.enemy2_scene == null:
+	if Game_Manager.Instance != null and Game_Manager.Instance.enemy2_scene == null:
 		return
 	
 	var enemy_instance = Game_Manager.Instance.enemy2_scene.instantiate()
@@ -183,7 +183,7 @@ func spawn_enemy2() -> void:
 
 
 func spawn_object() -> void:
-	if Game_Manager.Instance.object_scene == null:
+	if Game_Manager.Instance != null and Game_Manager.Instance.object_scene == null:
 		return
 	
 	var object_instance = Game_Manager.Instance.object_scene.instantiate()

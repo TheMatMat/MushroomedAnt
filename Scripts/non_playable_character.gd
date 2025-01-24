@@ -68,5 +68,14 @@ func _on_interact() -> void:
 			player.has_quest = false
 			player.has_started = false
 			Game_Manager.Instance.infection_level += 1 
+			match Game_Manager.Instance.infection_level:
+				1:
+					sprite.region_rect = properties.sprite_region2
+					sprite.z_index += 1
+					Game_Manager.Instance.hub_wall2.visible = true
+				2:
+					sprite.region_rect = properties.sprite_region3
+					sprite.z_index += 1
+					Game_Manager.Instance.hub_wall3.visible = true
 			LevelGenerator.Instance.unspawn_rooms()
 			hud.display_dialogue(texts, properties.name)

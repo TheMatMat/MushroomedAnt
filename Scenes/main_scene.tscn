@@ -26,6 +26,7 @@ script = ExtResource("8_rxhct")
 [node name="GameManager" parent="." instance=ExtResource("9_uhswj")]
 
 [node name="LevelGenerator" parent="." instance=ExtResource("6_tjhvm")]
+max_distance_to_spawn = 5
 
 [node name="Hub" parent="." instance=ExtResource("7_g4mhu")]
 position = Vector2(-1e+06, -1e+06)

@@ -149,7 +149,7 @@ func generate_quest() -> void:
 			hud.quest_icon.texture = hud.enemy_sprite[enemies_to_kill_index]
 		QuestType.OBJECT:
 			current_quest_type = QuestType.OBJECT
-			current_object_quest_needed = 1
+			current_object_quest_needed = 4
 			current_object_quest_index = 0
 			hud.quest_icon.texture = hud.object_sprite
 			hud.quest_count.text = "0/" + str(current_object_quest_needed)

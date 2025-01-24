@@ -3,9 +3,12 @@
 [ext_resource type="Script" path="res://Scripts/room.gd" id="1_4xs5f"]
 [ext_resource type="TileSet" uid="uid://boei5dbdfnuex" path="res://Resources/TileSets/placeholder_tileset.tres" id="2_d1d1g"]
 
-[node name="Room1" type="Node2D" node_paths=PackedStringArray("tilemap_layers")]
+[node name="Room1" type="Node2D" node_paths=PackedStringArray("tilemap_layers", "tilemaplayer_high", "tilemaplayer_medium", "tilemaplayer_low")]
 script = ExtResource("1_4xs5f")
 tilemap_layers = [NodePath("Floor"), NodePath("Props")]
+tilemaplayer_high = NodePath("Walls3")
+tilemaplayer_medium = NodePath("Walls2")
+tilemaplayer_low = NodePath("Walls1")
 room_type = 1
 
 [node name="collision" type="TileMapLayer" parent="."]
