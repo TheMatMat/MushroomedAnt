@@ -1,0 +1,6 @@
+{ 
+  "origin":["Oui ! #give# ! #give# ! #quick# ! #applause# !"], 
+  "applause":["Parfait","Splendide","Merveilleux","Incroyable","Oui"],
+  "give":["Donne","Toi donner","Me donner","Moi"],
+  "quick":["Vite","Rapidement","Tout de suite","Maintenant"]
+}

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/hud.gd" id="1_ftoh2"]
 [ext_resource type="PackedScene" uid="uid://bxb3sh2rsgn4j" path="res://Scenes/heart.tscn" id="2_fymyw"]
+[ext_resource type="Texture2D" uid="uid://c03bwmqa2wvqv" path="res://Sprites/feuille.png" id="3_f3u0c"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_awkk3"]
 load_path = "res://.godot/imported/fourmis ennemis base 1.png-dabc59906cc581c2a11fdb64bf92b967.ctex"
@@ -11,9 +12,6 @@ load_path = "res://.godot/imported/forumi_objo_1.png-145dcf5f7a3f7b2340712647db4
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vrm4p"]
 load_path = "res://.godot/imported/fourmis ennemis base 1.png-dabc59906cc581c2a11fdb64bf92b967.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ylhki"]
-load_path = "res://.godot/imported/props.png-ed04fc63ed36929630d14c4369b21a01.ctex"
 
 [sub_resource type="LabelSettings" id="LabelSettings_80qs3"]
 font_size = 24
@@ -41,7 +39,7 @@ script = ExtResource("1_ftoh2")
 heart_scene = ExtResource("2_fymyw")
 enemy_sprite = Array[Texture2D]([SubResource("CompressedTexture2D_awkk3"), SubResource("CompressedTexture2D_xqrkk")])
 enemies_sprite = SubResource("CompressedTexture2D_vrm4p")
-object_sprite = SubResource("CompressedTexture2D_ylhki")
+object_sprite = ExtResource("3_f3u0c")
 
 [node name="LifeContainer" type="HBoxContainer" parent="."]
 offset_right = 170.0

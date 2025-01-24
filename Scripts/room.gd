@@ -180,3 +180,13 @@ func spawn_enemy2() -> void:
 	var enemy_instance = Game_Manager.Instance.enemy2_scene.instantiate()
 	call_deferred("add_child", enemy_instance)
 	enemy_instance.transform.origin = transform.origin
+
+
+func spawn_object() -> void:
+	if Game_Manager.Instance.object_scene == null:
+		return
+	
+	var object_instance = Game_Manager.Instance.object_scene.instantiate()
+	call_deferred("add_child", object_instance)
+	object_instance.transform.origin = transform.origin
+	print(global_position)

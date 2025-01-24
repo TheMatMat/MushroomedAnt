@@ -19,3 +19,12 @@ func _on_body_entered(body: Node2D) -> void:
 		Player.QuestType.SPECIFIC_ENEMIES:
 			for room in levelGenerator.placed_rooms:
 				levelGenerator.placed_rooms[room].room_scene.spawn_enemy2()
+		Player.QuestType.OBJECT:
+			var max_distance = 0
+			await(get_tree().create_timer(3).timeout)
+			for room in levelGenerator.placed_rooms:
+				if levelGenerator.placed_rooms[room].distance_to_spawn > max_distance:
+					max_distance = levelGenerator.placed_rooms[room].distance_to_spawn
+			for room in levelGenerator.placed_rooms:
+				if levelGenerator.placed_rooms[room].distance_to_spawn > 1:
+					levelGenerator.placed_rooms[room].room_scene.spawn_object()

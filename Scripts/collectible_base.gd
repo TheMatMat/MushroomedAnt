@@ -1,4 +1,4 @@
-class_name CollectibleBase extends Node
+class_name CollectibleBase extends Node2D
 
 
 func on_collect() -> void:
