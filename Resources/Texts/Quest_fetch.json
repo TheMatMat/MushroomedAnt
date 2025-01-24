@@ -1,0 +1,7 @@
+{ 
+  "origin":["#feel#... #object#.. #fetch#, #quick#"], 
+  "feel":["Je sens","Sensations","Moi sentir","Ressentir"],
+  "object":["clé","clef là-bas","clef quelque part","clef ici"],
+  "fetch":["Va récupérer","Ramène ça","Cherche","Va chercher"],
+  "quick":["Vite","Rapidement","Tout de suite","Maintenant"]
+}

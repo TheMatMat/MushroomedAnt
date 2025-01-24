@@ -55,7 +55,13 @@ func _on_interact() -> void:
 			texts.push_back(Parser.Instance.generate_invalid_sentence())
 			hud.display_dialogue(texts, properties.name)
 		else:
-			texts.push_back(Parser.Instance.generate_quest_kill_valid_sentence())
+			match player.current_quest_type:
+				player.QuestType.ENEMIES:
+					texts.push_back(Parser.Instance.generate_quest_kill_valid_sentence())
+				player.QuestType.SPECIFIC_ENEMIES:
+					texts.push_back(Parser.Instance.generate_quest_special_valid_sentence())
+				player.QuestType.OBJECT:
+					texts.push_back(Parser.Instance.generate_quest_fetch_valid_sentence())
 			quest_finished.emit()
 			player.reset_enemies_killed()
 			player.reset_objects_collected()
