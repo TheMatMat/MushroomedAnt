@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bib07te5reau7" path="res://Scenes/player.tscn" id="1_qspk8"]
 [ext_resource type="Script" path="res://Scripts/camera_follow.gd" id="2_liovv"]
 [ext_resource type="PackedScene" uid="uid://2aoiswc8fl6b" path="res://Scenes/level_generator.tscn" id="6_tjhvm"]
-[ext_resource type="PackedScene" uid="uid://jfahlspttwun" path="res://Scenes/Rooms/ROOM OFFICIEL/Hub.tscn" id="7_g4mhu"]
+[ext_resource type="PackedScene" uid="uid://bvt0nn5hdepss" path="res://Scenes/Rooms/ROOM OFFICIEL/Hub.tscn" id="7_g4mhu"]
 [ext_resource type="PackedScene" uid="uid://b20085rng87fk" path="res://Scenes/hud.tscn" id="7_i43eg"]
 [ext_resource type="Script" path="res://Scripts/parser.gd" id="8_rxhct"]
 [ext_resource type="PackedScene" uid="uid://dchrdb0njsq4t" path="res://Scenes/game_manager.tscn" id="9_uhswj"]

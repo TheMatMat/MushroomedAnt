@@ -18,8 +18,11 @@ const quest_valid3_path = "res://Resources/Texts/Quest_Valid3.json"
 
 const quest_special1_path = "res://Resources/Texts/Quest_special1.json"
 const quest_special2_path = "res://Resources/Texts/Quest_Special2.json"
+const quest_special_valid_path = "res://Resources/Texts/Quest_Special_Valid.json"
 
+const quest_fetch_path = "res://Resources/Texts/Quest_fetch.json"
 const quest_fetch3_path = "res://Resources/Texts/Quest_fetch3.json"
+const quest_fetch_valid_path = "res://Resources/Texts/Quest_fetch_Valid.json"
 
 var intro1_parsed_text
 var intro2_parsed_text
@@ -33,7 +36,10 @@ var quest_kill2_valid_parsed_text
 var quest_valid3_parsed_text
 var quest_special1_parsed_text
 var quest_special2_parsed_text
+var quest_special_valid_parsed_text
+var quest_fetch_parsed_text
 var quest_fetch3_parsed_text
+var quest_fetch_valid_parsed_text
 
 var nbr_fourmi
 
@@ -91,9 +97,21 @@ func _ready() -> void:
 	text = file.get_as_text()
 	quest_special2_parsed_text = JSON.parse_string(text)
 	
+	file = FileAccess.open(quest_special_valid_path, FileAccess.READ)
+	text = file.get_as_text()
+	quest_special_valid_parsed_text = JSON.parse_string(text)
+	
+	file = FileAccess.open(quest_fetch_path, FileAccess.READ)
+	text = file.get_as_text()
+	quest_fetch_parsed_text = JSON.parse_string(text)
+	
 	file = FileAccess.open(quest_fetch3_path, FileAccess.READ)
 	text = file.get_as_text()
 	quest_fetch3_parsed_text = JSON.parse_string(text)
+	
+	file = FileAccess.open(quest_fetch_valid_path, FileAccess.READ)
+	text = file.get_as_text()
+	quest_fetch_valid_parsed_text = JSON.parse_string(text)
 
 
 func generate_intro_sentence() -> String:
@@ -193,13 +211,25 @@ func generate_quest_special_sentence() -> String:
 	return template
 
 
+func generate_quest_special_valid_sentence() -> String:
+	var text = quest_special_valid_parsed_text
+	if text == null || !text is Dictionary:
+		return ""
+	var template = text["origin"].pick_random()
+	for key in text.keys():
+		if key != "origin":
+			var picked_text = text[key].pick_random()
+			template = template.replace("#%s#" % key, picked_text)
+	return template
+
+
 func generate_quest_fetch_sentence() -> String:
 	var text
 	match Game_Manager.Instance.infection_level:
 		0:
-			text = quest_special1_parsed_text
+			text = quest_fetch_parsed_text
 		1: 
-			text = quest_special2_parsed_text
+			text = quest_fetch_parsed_text
 		2: 
 			text = quest_fetch3_parsed_text
 			
@@ -212,4 +242,16 @@ func generate_quest_fetch_sentence() -> String:
 			template = template.replace("#%s#" % key, picked_text)
 			if key == "nbrFourmis":
 				nbr_fourmi = int(picked_text)
+	return template
+
+
+func generate_quest_fetch_valid_sentence() -> String:
+	var text = quest_fetch_valid_parsed_text
+	if text == null || !text is Dictionary:
+		return ""
+	var template = text["origin"].pick_random()
+	for key in text.keys():
+		if key != "origin":
+			var picked_text = text[key].pick_random()
+			template = template.replace("#%s#" % key, picked_text)
 	return template

@@ -10,6 +10,8 @@ enum QuestType{OBJECT, ENEMIES, SPECIFIC_ENEMIES}
 var ui_opened : bool = false
 var can_interact_with_npc : bool = true
 
+var collisions_enabled : bool = true
+
 # Collectible
 var key_count : int
 
@@ -43,6 +45,9 @@ func _process(delta: float) -> void:
 	super(delta)
 	_update_inputs()
 	_update_room()
+	
+	if Input.is_action_just_pressed("Debug"):
+		toggle_collisions()
 
 
 func enter_room(room : Room) -> void:
@@ -151,4 +156,13 @@ func generate_quest() -> void:
 	
 	has_quest = true
 	hud.quest_icon.visible = true
-	
+
+
+func toggle_collisions() -> void:
+	collisions_enabled = not collisions_enabled
+	if collisions_enabled:
+		collision_layer = 1
+		collision_mask = 1
+	else:
+		collision_layer = 0 
+		collision_mask = 0

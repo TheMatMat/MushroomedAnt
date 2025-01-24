@@ -6,7 +6,7 @@
 [node name="Room2" type="Node2D" node_paths=PackedStringArray("tilemap_layers")]
 script = ExtResource("1_ylyun")
 tilemap_layers = [NodePath("Floor_lvl1"), NodePath("Decorations_lvl1")]
-room_type = 2
+room_type = 5
 
 [node name="Collisions" type="TileMapLayer" parent="."]
 position = Vector2(-16, 16)

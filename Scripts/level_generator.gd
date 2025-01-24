@@ -60,7 +60,7 @@ func spawn_rooms() -> void:
 	
 	var first_room : Room = null
 	# Create the first room
-	if(all_rooms_sorted[Room.RoomType.SPAWN] and all_rooms_sorted.has[Room.RoomType.SPAWN].size() > 0):
+	if(all_rooms_sorted[Room.RoomType.SPAWN] and all_rooms_sorted[Room.RoomType.SPAWN].size() > 0):
 		first_room = all_rooms_sorted[Room.RoomType.SPAWN].pick_random()
 	else:
 		first_room = all_rooms.pick_random()
